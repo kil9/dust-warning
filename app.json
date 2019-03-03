@@ -1,0 +1,8 @@
+{
+  "name": "dust trigger",
+  "description": "fine dust trigger for IFTTT",
+  "repository": "https://github.com/kil9/dust-warning",
+  "logo": "https://cdn.rawgit.com/heroku/dust-warning/master/public/node.svg",
+  "keywords": ["node", "heroku"],
+  "image": "heroku/nodejs"
+}
