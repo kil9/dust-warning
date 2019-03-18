@@ -2,10 +2,17 @@ const rp = require('request-promise')
 const parse = require('node-html-parser').parse
 
 const ALERT_THRESHOLD = 100 // ug/m3
-fetch_url = process.env['FETCH_URL']
-ifttt_url = process.env['IFTTT_URL']
+const fetch_url = process.env['FETCH_URL']
+const ifttt_url = process.env['IFTTT_URL']
 
-rp(fetch_url).then(body => {
+const options = {
+  url: fetch_url,
+  headers: {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36',
+  }
+}
+
+rp(options).then(body => {
   const root = parse(body)
   const pm10 = root.querySelectorAll('span.l em')[0].innerHTML
   const pm2 = root.querySelectorAll('span.l em')[1].innerHTML
