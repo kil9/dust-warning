@@ -19,6 +19,8 @@ rp(options).then(body => {
 
   if (parseInt(pm10) >= ALERT_THRESHOLD || parseInt(pm2) >= ALERT_THRESHOLD) {
     return rp(ifttt_url)
+  } else {
+    console.log('no warning sent. pm10: '+pm10+', pm2: '+pm2)
   }
 }).then(body => {
   body && console.log('ifttt triggered', body)
