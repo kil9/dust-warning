@@ -16,6 +16,7 @@ rp(options).then(body => {
   const root = parse(body)
   const pm10 = root.querySelectorAll('span.l em')[0].innerHTML
   const pm2 = root.querySelectorAll('span.l em')[1].innerHTML
+  console.log('pm10', pm10, '\tpm2', pm2)
 
   if (parseInt(pm10) >= ALERT_THRESHOLD || parseInt(pm2) >= ALERT_THRESHOLD) {
     return rp(ifttt_url)

@@ -19,7 +19,7 @@
   "homepage": "https://github.com/kil9/dust-warning#readme",
   "dependencies": {
     "lodash": "^4.17.15",
-    "node-html-parser": "^1.1.12",
+    "node-html-parser": "^1.1.16",
     "request": "^2.88.0",
     "request-promise": "^4.2.4"
   },
